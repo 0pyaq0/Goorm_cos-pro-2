@@ -1,27 +1,23 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
-int solution(int data[], int data_len) {
-    double total = 0;
-    for (int i = 0; i < data_len; i++)
-        total += data[i];
-    int cnt = 0;
-    double average = data_len / total;
-    for (int i = 0; i < data_len; i++)
-        if (data[i] <= average)
-            cnt += 1;
-    return cnt;
+char* solution(char* characters) {
+	char* result = malloc(sizeof(char) * strlen(characters));
+	int result_len = 0;
+	result[0] = characters[0];
+	result_len++;
+	for (int i = 1; i <= strlen(characters); i++) {
+		if (characters[i - 1] != characters[i]) {
+			result[result_len] = characters[i];
+			result_len++;
+		}
+	}
+	result[result_len] = NULL;
+	return result;
 }
 int main() {
-    int data1[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-    int data_len1 = 10;
-    int ret1 = solution(data1, data_len1);
+	char* characters = "senteeeencccccceeee";
+	char* ret = solution(characters);
 
-    printf("solution ÇÔ¼öÀÇ ¹ÝÈ¯ °ªÀº %d ÀÔ´Ï´Ù.\n", ret1);
-
-    int data2[10] = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 10 };
-    int data_len2 = 10;
-    int ret2 = solution(data2, data_len2);
-
-    printf("solution ÇÔ¼öÀÇ ¹ÝÈ¯ °ªÀº %d ÀÔ´Ï´Ù.\n", ret2);
+	printf("solution í•¨ìˆ˜ì˜ ë°˜í™˜ ê°’ì€ %s ìž…ë‹ˆë‹¤.\n", ret);
 }
