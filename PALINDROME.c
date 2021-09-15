@@ -6,7 +6,7 @@ bool solution(char* sentence) {
     int len = 0;
     for (int i = 0; i < strlen(sentence); i++) {
         char ch = sentence[i];
-        if (ch != ' ' || ch != '.') str[len++] = ch;
+        if (ch != ' ' && ch != '.') str[len++] = ch;
     }
     for (int i = 0; i < len / 2; i++) {
         if (str[i] != str[len - 1 - i]) return false;
@@ -17,10 +17,10 @@ int main() {
     char sentence1[19] = "never odd or even.";
     bool ret1 = solution(sentence1);
 
-    printf("solution ÇÔ¼öÀÇ ¹ÝÈ¯ °ªÀº %s ÀÔ´Ï´Ù.\n", ret1 == true ? "true" : "false");
+    printf("solution í•¨ìˆ˜ì˜ ë°˜í™˜ ê°’ì€ %s ìž…ë‹ˆë‹¤.\n", ret1 == true ? "true" : "false");
 
     char sentence2[19] = "palindrome";
     bool ret2 = solution(sentence2);
 
-    printf("solution ÇÔ¼öÀÇ ¹ÝÈ¯ °ªÀº %s ÀÔ´Ï´Ù.\n", ret2 == true ? "true" : "false");
+    printf("solution í•¨ìˆ˜ì˜ ë°˜í™˜ ê°’ì€ %s ìž…ë‹ˆë‹¤.\n", ret2 == true ? "true" : "false");
 }
