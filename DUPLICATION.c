@@ -6,7 +6,7 @@ char* solution(char* characters) {
 	int result_len = 0;
 	result[0] = characters[0];
 	result_len++;
-	for (int i = 0; i < strlen(characters); i++) {
+	for (int i = 1; i <= strlen(characters); i++) {
 		if (characters[i - 1] != characters[i]) {
 			result[result_len] = characters[i];
 			result_len++;
@@ -19,5 +19,5 @@ int main() {
 	char* characters = "senteeeencccccceeee";
 	char* ret = solution(characters);
 
-	printf("solution ÇÔ¼öÀÇ ¹İÈ¯ °ªÀº %s ÀÔ´Ï´Ù.\n", ret);
+	printf("solution í•¨ìˆ˜ì˜ ë°˜í™˜ ê°’ì€ %s ì…ë‹ˆë‹¤.\n", ret);
 }
